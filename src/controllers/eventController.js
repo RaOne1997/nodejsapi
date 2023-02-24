@@ -59,18 +59,21 @@ const login = async (req, res, next) => {
 //     }
 // }
 
-// const deleteEvent = async (req, res, next) => {
-//     try {
-//         const eventId = req.params.id;
-//         const deletedEvent = await eventData.deleteEvent(eventId);
-//         res.send(deletedEvent);
-//     } catch (error) {
-//         res.status(400).send(error.message);
-//     }
-// }
+const Welcome = async (req, res, next) => {
+
+    res.send("Welcome Abhijeet World")
+    // try {
+    //     const eventId = req.params.id;
+    //     const deletedEvent = await eventData.deleteEvent(eventId);
+    //     res.send(deletedEvent);
+    // } catch (error) {
+    //     res.status(400).send(error.message);
+    // }
+}
 
 module.exports = {
     allUser,
+    Welcome,
     // getEvent,
     // addEvent,
     // updatEvent,
