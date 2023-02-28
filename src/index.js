@@ -4,6 +4,7 @@ const config = require('./config');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const eventRoutes = require('./router/eventRoutes');
+const jwt = require('jsonwebtoken');
 
 const app = express();
 
