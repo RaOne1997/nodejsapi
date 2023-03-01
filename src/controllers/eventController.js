@@ -5,16 +5,20 @@ const Logger = require('../logger');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { DateTime } = require('mssql');
+const auths= require('../middelvare/auth')
 
 
 
 
 const allUser = async (req, res, next) => {
     try {
-
+      var valide=   auths.verifyToken(req)
+      if(valide){
         const eventlist = await eventData.getEvents();
-        res.send(eventlist);        
-        eventData
+        res.send(eventlist);   
+      }     
+        else
+        res.status(401).send("Ur not autorise")
     } catch (error) {
         res.status(400).send(error.message);
     }
